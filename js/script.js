@@ -1,5 +1,7 @@
-// creo l'array di oggetti
+// ! recupero gli elementi in pagina
+const teamInfoElement = document.getElementById("teamInfo");
 
+// creo l'array di oggetti
 const teamMembers = [
     {name: "Wayne Barnett", role: "Founder & CEO", photo: "wayne-barnett-founder-ceo.jpg"},
     {name: "Angela Caroll", role: "Chief Editor", photo: "angela-caroll-chief-editor.jpg"},
@@ -10,10 +12,21 @@ const teamMembers = [
 ]
 
 // stampo in console le informazioni di nome ruolo e foto
-
 for (let i = 0; i < teamMembers.length; i++) {
     console.log("Nome:", teamMembers[i].name);
     console.log("Ruolo:", teamMembers[i].role);
     console.log("Foto:", teamMembers[i].photo);
 }
 
+// stampo le stesse info sul DOM
+
+// costruisco le stringhe
+for (let i = 0; i < teamMembers.length; i++) {
+    // Crea una stringa con le informazioni del membro del team
+    const memberInfoString = "Nome: " + teamMembers[i].name + "<br>" +
+                           "Ruolo: " + teamMembers[i].role + "<br>" +
+                           "Foto: " + teamMembers[i].photo + "<br><br>";
+
+    // Aggiungo la stringa all'elemento nel DOM
+    teamInfoElement.innerHTML += memberInfoString;
+}
