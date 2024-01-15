@@ -8,3 +8,12 @@ const teamMembers = [
     {name: "Scott Estrada", role: "Developer", photo: "scott-estrada-developer.jpg"},
     {name: "Barbara Ramos", role: "Graphic Designer", photo: "barbara-ramos-graphic-designer.jpg"},
 ]
+
+// stampo in console le informazioni di nome ruolo e foto
+
+for (let i = 0; i < teamMembers.length; i++) {
+    console.log("Nome:", teamMembers[i].name);
+    console.log("Ruolo:", teamMembers[i].role);
+    console.log("Foto:", teamMembers[i].photo);
+}
+
