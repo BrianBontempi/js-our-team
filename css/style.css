@@ -1,0 +1,10 @@
+body{
+    background-color: #f1f3f5;
+}
+
+/* ! card */
+
+.card img{
+    aspect-ratio: 1;
+    object-fit: cover;
+}

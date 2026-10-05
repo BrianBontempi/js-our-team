@@ -18,15 +18,24 @@ for (let i = 0; i < teamMembers.length; i++) {
     console.log("Foto:", teamMembers[i].photo);
 }
 
-// stampo le stesse info sul DOM
+// stampo le stesse info sul DOM sotto forma di card
 
-// costruisco le stringhe
+// costruisco le card
 for (let i = 0; i < teamMembers.length; i++) {
-    // Crea una stringa con le informazioni del membro del team
-    const memberInfoString = "Nome: " + teamMembers[i].name + "<br>" +
-                           "Ruolo: " + teamMembers[i].role + "<br>" +
-                           "Foto: " + teamMembers[i].photo + "<br><br>";
+    const member = teamMembers[i];
 
-    // Aggiungo la stringa all'elemento nel DOM
-    teamInfoElement.innerHTML += memberInfoString;
+    // Crea la card con foto, nome e ruolo del membro del team
+    const memberCard = `
+    <div class="col">
+        <div class="card h-100 text-center">
+            <img src="img/${member.photo}" class="card-img-top" alt="${member.name}">
+            <div class="card-body">
+                <h5 class="card-title">${member.name}</h5>
+                <p class="card-text">${member.role}</p>
+            </div>
+        </div>
+    </div>`;
+
+    // Aggiungo la card all'elemento nel DOM
+    teamInfoElement.innerHTML += memberCard;
 }
